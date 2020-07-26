@@ -28,8 +28,11 @@ def print_out():
     data = get_device_list()
     foo = data['response']
     print('\n')
-    print('{:<25}{:^25}{:<25}{:<25}{:<25}'.format('hostname', 'mgmt IP', 'Platform',
-          'IOS', 'SN#'))
+    print('{:<25}{:^25}{:<25}{:<25}{:<25}'.format('hostname',
+                                                  'mgmt IP',
+                                                  'Platform',
+                                                  'IOS',
+                                                  'SN#'))
     print(('-'*125))
     for x in foo:
         for k,v in x.items():
@@ -39,7 +42,11 @@ def print_out():
                 x[k] = '*!*!*!*!*!'
         clean.append(x)
     for i in clean:
-        print('{:<25}{:^25}{:<25}{:<25}{:<25}'.format( i['hostname'], i['managementIpAddress'], i['platformId'], i['softwareVersion'], i['serialNumber']))
+        print('{:<25}{:^25}{:<25}{:<25}{:<25}'.format(i['hostname'],
+                                                      i['managementIpAddress'],
+                                                      i['platformId'], 
+                                                      i['softwareVersion'], 
+                                                      i['serialNumber']))
         print(('-'*125))
 
 if __name__ == "__main__":
